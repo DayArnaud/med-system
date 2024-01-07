@@ -6,19 +6,40 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
+  background-color: #eee;
+  height: 6rem;
+  padding-left: 5rem;
 `;
 
 const Logo = styled.h1`
-  font-size: 1.5rem;
-  color: #333;
+  color: #018762;
   cursor: pointer;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const NavLinks = styled.div`
   & > * {
-    margin-left: 1rem;
+    width: 32.7rem;
+    margin-right: 3rem;
+    color: #1f1f1f;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
