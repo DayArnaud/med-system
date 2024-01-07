@@ -6,7 +6,7 @@ const user = () => {
   return (
     <Layout>
       <HeroSection
-        title="Profissional"
+        title="Pessoa Usuária"
         description="A Lacrei garante que pessoas LGBTQIAPN + recebam atendimento realizado por profissionais de qualidade e que atendam às suas necessidades de forma segura e acolhedora."
       />
     </Layout>

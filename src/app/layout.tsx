@@ -1,12 +1,16 @@
 import "./globals.css";
-import NavBar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <NavBar />
-      {children}
+      <Navbar />
+      <main>{children}</main>
       <Footer />
     </>
   );

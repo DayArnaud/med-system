@@ -6,7 +6,7 @@ const professional = () => {
   return (
     <Layout>
       <HeroSection
-        title="Pessoa Usuária"
+        title="Profissional"
         description="A Lacrei garante que pessoas LGBTQIAPN + recebam atendimento realizado por profissionais de qualidade e que atendam às suas necessidades de forma segura e acolhedora."
       />
     </Layout>
