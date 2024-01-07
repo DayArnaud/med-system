@@ -1,11 +1,12 @@
 "use client";
 
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyled } from "@/styles/global";
 import { defaultTheme } from "@/styles/themes/default";
+
+const inter = Nunito({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -14,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <ThemeProvider theme={defaultTheme}>
           {children}
           <GlobalStyled />
