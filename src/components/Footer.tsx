@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
@@ -6,31 +8,38 @@ import Image from "next/image";
 const FooterContainer = styled.footer`
   position: relative;
   border-top: 0.5px solid #00b37e;
-  margin-top: 12rem;
-  border: 1px solid red;
+  margin: 12rem 5rem 0 10rem;
 `;
 
 const SocialMediaLinks = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  margin-top: 2rem;
 `;
 
-const SocialLink = styled.a`
-  color: #1f1f1f;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+const SocialIcon = styled(Link)`
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &:nth-of-type(n + 2) {
+    margin-left: 3rem;
+  }
 
   &:hover {
-    color: #888;
+    opacity: 0.5;
+    transform: translateY(-2px);
   }
 `;
 
 const NavLinks = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+
   & > * {
-    width: 32.7rem;
     color: #1f1f1f;
     font-size: 1.6rem;
     font-style: normal;
@@ -50,6 +59,7 @@ const FooterText = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 2rem;
 `;
 
 const Footer: React.FC = () => {
@@ -67,7 +77,7 @@ const Footer: React.FC = () => {
         </Link>
       </NavLinks>
       <SocialMediaLinks>
-        <SocialLink
+        <SocialIcon
           href="https://www.facebook.com/lacrei.saude/"
           target="_blank"
         >
@@ -77,8 +87,8 @@ const Footer: React.FC = () => {
             width={32}
             height={32}
           />
-        </SocialLink>
-        <SocialLink
+        </SocialIcon>
+        <SocialIcon
           href="https://www.instagram.com/lacrei.saude/"
           target="_blank"
         >
@@ -88,8 +98,8 @@ const Footer: React.FC = () => {
             width={32}
             height={32}
           />
-        </SocialLink>
-        <SocialLink
+        </SocialIcon>
+        <SocialIcon
           href="https://www.linkedin.com/company/lacrei-saude/"
           target="_blank"
         >
@@ -99,7 +109,7 @@ const Footer: React.FC = () => {
             width={32}
             height={32}
           />
-        </SocialLink>
+        </SocialIcon>
       </SocialMediaLinks>
       <FooterText>Desafio Front-end Lacrei</FooterText>
     </FooterContainer>

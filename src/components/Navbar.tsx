@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
@@ -8,10 +10,10 @@ const Nav = styled.nav`
   align-items: center;
   background-color: #eee;
   height: 6rem;
-  padding-left: 5rem;
+  padding-left: 8rem;
 `;
 
-const Logo = styled.h1`
+const Logo = styled(Link)`
   color: #018762;
   cursor: pointer;
   font-size: 3.2rem;
@@ -46,15 +48,19 @@ const NavLinks = styled.div`
 const Navbar: React.FC = () => {
   return (
     <Nav>
-      <Link href={"/"} passHref>
-        <Logo>Lacrei</Logo>
-      </Link>
+      <Logo href={"/"} passHref>
+        Lacrei
+      </Logo>
       <NavLinks>
-        <Link href={"/"}>Home</Link>
+        <Link href={"/"} passHref>
+          Home
+        </Link>
         <Link href={"/user"} passHref>
           Pessoa Usuária
         </Link>
-        <Link href={"/professional"}>Profissional</Link>
+        <Link href={"/professional"} passHref>
+          Profissional
+        </Link>
       </NavLinks>
     </Nav>
   );
