@@ -17,8 +17,6 @@ const StyledLink = styled(Link)<{ $variant: "primary" | "secondary" }>`
   width: 19.2rem;
   height: 4.8rem;
   flex-shrink: 0;
-  margin-top: 5rem;
-  margin-right: 7rem;
   border-radius: 0.8rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   font-size: 1.8rem;

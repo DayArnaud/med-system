@@ -28,10 +28,23 @@ const HeroContainer = styled.div`
 const TextContainer = styled.div`
   max-width: 600px;
   text-align: left;
+  div {
+    display: flex;
+    margin-top: 5rem;
+    gap: 7rem;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
   }
 `;
 
@@ -67,6 +80,7 @@ const Description = styled.p<{ $hasBorder?: boolean }>`
 
   @media (max-width: 768px) {
     font-size: 1.6rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -89,14 +103,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <Title>{title}</Title>
         <Description $hasBorder={hasBorder}>{description}</Description>
         {hasLinkButton && (
-          <>
+          <div>
             <LinkButton href="/user" variant="primary">
               Pessoa Usuária
             </LinkButton>
             <LinkButton href="/professional" variant="secondary">
               Profissional
             </LinkButton>
-          </>
+          </div>
         )}
       </TextContainer>
       <StyledImage src={imageSrc} alt="Imagem ilustrativa" />

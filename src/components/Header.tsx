@@ -18,7 +18,6 @@ const Nav = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
     padding-left: 0;
   }
 `;
@@ -48,8 +47,8 @@ const NavLinksContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    width: 100%;
     margin-right: 0;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -67,7 +66,7 @@ const NavLink = styled.span<{ $isActive: boolean }>`
   }
 `;
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const pathname = usePathname();
 
   return (
@@ -92,4 +91,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Header;
