@@ -9,6 +9,7 @@ const HomePage = () => {
         title="Boas vindas a Lacrei Saúde"
         description="Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+"
         imageSrc="./assets/rafiki-index.svg"
+        hasLinkButton={true}
       />
     </Layout>
   );

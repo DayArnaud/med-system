@@ -8,7 +8,7 @@ import Image from "next/image";
 const FooterContainer = styled.footer`
   position: relative;
   border-top: 0.5px solid #00b37e;
-  margin: 12rem 5rem 0 10rem;
+  margin: 1rem 5rem 0 9rem;
 `;
 
 const SocialMediaLinks = styled.div`
