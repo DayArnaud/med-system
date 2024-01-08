@@ -4,11 +4,16 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const FooterContainer = styled.footer`
   position: relative;
   border-top: 0.5px solid #00b37e;
   margin: 1rem 5rem 0 9rem;
+
+  @media (max-width: 768px) {
+    margin-left: 2rem;
+  }
 `;
 
 const SocialMediaLinks = styled.div`
@@ -35,19 +40,27 @@ const SocialIcon = styled(Link)`
 const NavLinks = styled.div`
   display: flex;
   justify-content: left;
-  align-items: center;
   gap: 2rem;
   margin-top: 2rem;
-
-  & > * {
-    color: #1f1f1f;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    transition: opacity 0.2s ease;
+  a {
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+`;
+
+const NavLink = styled.span<{ $isActive: boolean }>`
+  color: #1f1f1f;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: ${({ $isActive }) => ($isActive ? "700" : "400")};
+  line-height: normal;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+
   &:hover {
     opacity: 0.7;
   }
@@ -63,17 +76,21 @@ const FooterText = styled.p`
 `;
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+
   return (
     <FooterContainer>
       <NavLinks>
         <Link href={"/"} passHref>
-          Home
+          <NavLink $isActive={pathname === "/"}>Home</NavLink>
         </Link>
         <Link href={"/user"} passHref>
-          Pessoa Usuária
+          <NavLink $isActive={pathname === "/user"}>Pessoa Usuária</NavLink>
         </Link>
         <Link href={"/professional"} passHref>
-          Profissional
+          <NavLink $isActive={pathname === "/professional"}>
+            Profissional
+          </NavLink>
         </Link>
       </NavLinks>
       <SocialMediaLinks>

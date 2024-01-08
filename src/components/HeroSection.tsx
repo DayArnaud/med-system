@@ -21,12 +21,18 @@ const HeroContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-left: 1rem;
   }
 `;
 
 const TextContainer = styled.div`
   max-width: 600px;
   text-align: left;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -35,6 +41,11 @@ const Title = styled.h1`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
 `;
 
 const Description = styled.p<{ $hasBorder?: boolean }>`
@@ -53,6 +64,10 @@ const Description = styled.p<{ $hasBorder?: boolean }>`
       border-left: 5px solid #018762;
       margin-top: 3.2rem;
     `}
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledImage = styled.img`
